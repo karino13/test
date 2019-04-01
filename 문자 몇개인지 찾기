@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner str = new Scanner(System.in);
+        System.out.println("문자열 입력 : ");
+        String a = str.nextLine();
+        System.out.println("찾을 문자 : c");
+        str.close() ;
+        int count=0;
+
+        System.out.println("입력한 문자열 :" + a);
+
+        for(int i=0;i<a.length();i++) {
+            if(a.charAt(i) == 'c')
+                count++;
+        }
+        System.out.println("문자열 c의 갯수 : " + count);
+        // 1. 입력받은 문자열의 알파뱃 카운트 출력 코드 만들기
+
+    }
+}
