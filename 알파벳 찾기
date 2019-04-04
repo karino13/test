@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        String str;
+        char[] Alpha = new char[26]; //배열선언 및 배열 초기화
+        char[] alpha = new char[26];
+        int[] count = new int[26], count1 = new int[26];
+
+
+        //alpha에 알파벳 순서대로 넣기
+        for(int i=0;i<26;i++){
+            Alpha[i]=(char)(65+i);
+        }
+
+        for(int i=0;i<26;i++){
+            alpha[i]=(char)(97+i);
+        }
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("문자열 입력 : ");
+        str = input.nextLine();
+
+        for(int i=0;i<str.length();i++)
+            for(int j=0;j<26;j++){
+                if(str.charAt(i) == alpha[j]) count[j]++;
+            }
+
+        for(int i=0;i<str.length();i++)
+            for(int j=0;j<26;j++){
+                if(str.charAt(i) == Alpha[j]) count1[j]++;
+            }
+
+        for(int k=0;k<26;k++)
+            System.out.println((char)(97+k) + " : " + count[k]);
+
+        for(int k=0;k<26;k++)
+            System.out.println((char)(65+k) + " : " + count1[k]);
+
+    }
+}
