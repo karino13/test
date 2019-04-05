@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+class Main {
+    public static void main(String[] args) {
+        String file = "PostLogin.java";
+        String findStr ="(?i).*boolean.*";
+        int lineNo=1;
+
+        try {
+            BufferedReader fileReader = new BufferedReader(new FileReader(file));
+            String s; 
+            while((s = fileReader.readLine()) != null){
+                if(s.matches(findStr))
+                    System.out.println(lineNo + " : " + s);
+                lineNo++;
+            }
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
