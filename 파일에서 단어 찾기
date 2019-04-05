@@ -3,27 +3,27 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-class Main {
-    public static void main(String[] args) {
-        String file = "PostLogin.java";
-        String findStr ="(?i).*boolean.*";
-        int lineNo=1;
+class Main{
+    public static void main(String[] args){
+        //파일에서 특정 단어 찾기
+        String filename = "PostLogin.java";
+        String word = "(?i).*boolean.*";
 
         try {
-            BufferedReader fileReader = new BufferedReader(new FileReader(file));
-            String s; 
-            while((s = fileReader.readLine()) != null){
-                if(s.matches(findStr))
-                    System.out.println(lineNo + " : " + s);
-                lineNo++;
-            }
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String s;
 
+            int line =1;
+            while ((s = reader.readLine()) != null)//문단 나누는 기준으로 파일을 한줄 씩 읽음
+            {
+                if (s.matches(word))
+                    System.out.println(line + " : " + s);
+                line++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
