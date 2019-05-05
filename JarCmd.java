@@ -3,10 +3,10 @@ import java.io.BufferedReader;
 import java.util.*;
 import java.io.InputStreamReader;
 
-public class Main {
+public class JarCmd {
 
     public static void main(String[] args) {
-        Main.execute("jar xvf InsecureBankv2-dex2jar.jar");
+        JarCmd.execute("jar xvf InsecureBankv2-dex2jar.jar");
     }
 
     public static void execute(String cmd) {
