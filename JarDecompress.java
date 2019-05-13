@@ -4,7 +4,7 @@ import java.util.Scanner;
 class JarDec {
 
 
-    public static void main(String[] args) {
+    public static void jar(String[] args) {
         // 실행 커맨드
         String[] cmd = { "cmd", "/c", "cd C:\\test && jar xvf InsecureBankv2-dex2jar.jar"};
 
