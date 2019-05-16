@@ -1,29 +1,24 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-class JarDec {
-
-
-    public static void jar(String[] args) {
-        // 실행 커맨드
-        String[] cmd = { "cmd", "/c", "cd C:\\test && jar xvf InsecureBankv2-dex2jar.jar"};
-
+//jar파일 압축 풀기
+class Jar {
+    public static String FileName = "InsecureBankv2";
+    public static void JarFunc(String args) {
+        String[] cmd = { "cmd", "/c",  "cd C:\\test && jar xvf ",args+"-dex2jar.jar"};
         Process process = null;
-
         try {
-            // 프로세스빌더 실행
             process = new ProcessBuilder(cmd).start();
 
-            // 스캐너클래스를 사용해 InputStream을 스캔함
             Scanner s = new Scanner(process.getInputStream(), "EUC-KR");
             while (s.hasNextLine() == true) {
-                // 표준출력으로 출력
                 System.out.println(s.nextLine());
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    public static void main(String[] args){
+        JarFunc(FileName);
+    }
 }
