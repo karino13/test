@@ -4,7 +4,7 @@ import java.util.Scanner;
 //jar파일 압축 풀기
 class Jar {
     public static String FileName = "InsecureBankv2";
-    public static void JarFunc(String args) {
+    public static String JarFunc(String args) {
         String[] cmd = { "cmd", "/c",  "cd C:\\test && jar xvf ",args+"-dex2jar.jar"};
         Process process = null;
         try {
@@ -19,6 +19,7 @@ class Jar {
         }
     }
     public static void main(String[] args){
-        JarFunc(FileName);
+        String JarClass;
+        JarClass = JarFunc(FileName);
     }
 }
