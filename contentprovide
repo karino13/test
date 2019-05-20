@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+class Content{
+    public static int find(){
+        //xml파일에서 provider 검색
+        String filename = "xmltest.txt";
+        // xml파일을 어떻게 텍스트로 받을지 몰라서 안드로이드 스튜디오로 연 후  txt에 따로 복붙해서 저장했습니다.
+        // xml파일을 어떻게 풀까요?
+        String word = "(?i).*provider.*";
+        int num=0;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String s;
+            int line =1;
+
+            while ((s = reader.readLine()) != null) {
+                if (s.matches(word)){
+                    System.out.println(line + " : " + s);
+                    num++;
+                }
+                line++; }
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+        catch (IOException e) { e.printStackTrace(); }
+        if(num>0)
+            return 1; //content provide 취약점이 있으면 1 return
+        else
+            return 0;
+    }
+}
+public abstract class Main{
+    public static void main(String[] args){
+        int contentprovide;
+        Content content = new Content();
+        contentprovide = content.find();
+    }
+}
