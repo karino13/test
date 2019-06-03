@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-//jar파일 압축 풀기
+
 class Jar {
 
     public static String XmlFunc(String args) {
