@@ -5,15 +5,14 @@ import java.io.IOException;
 
 class Content{
     public static int find(){
-        //xml파일에서 provider 검색
-        String filename = "xmltest.txt";
-        // xml파일을 어떻게 텍스트로 받을지 몰라서 안드로이드 스튜디오로 연 후  txt에 따로 복붙해서 저장했습니다.
-        // xml파일을 어떻게 풀까요?
+        //xml파일에서 provider 검색 함수
+        String filename = "AndroidManifest.xml";
         String word = "(?i).*provider.*";
         int num=0;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             String s;
+
             int line =1;
 
             while ((s = reader.readLine()) != null) {
@@ -35,5 +34,7 @@ public abstract class Main{
         int contentprovide;
         Content content = new Content();
         contentprovide = content.find();
+
     }
+
 }
