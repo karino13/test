@@ -8,6 +8,7 @@ public class Main {
     }
 
 }
+//클래스 파일 배열에 
 class ClassList {
     public static String[] filelist = new String[9999];
     public static String[] Start() {
