@@ -4,11 +4,11 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
         String[] filelist;
-        filelist = ClassList.Start();
+        filelist = ClassList.Start(); // .class 경로 넣기 함수 선언
     }
 
 }
-//클래스 파일 배열에 넣기
+//----------- 이 클래스는 .class 파일들의 경로를 filelist배열에 차례로 넣어줍니다. (하위디렉토리 포함)
 class ClassList {
     public static String[] filelist = new String[9999];
     public static String[] Start() {
