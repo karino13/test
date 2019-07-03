@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Jar {
 
     public static String XmlFunc(String args) {
-        String[] cmd = { "cmd", "/c",  "cd c:\\ && apktool d -f InsecureBankv2.apk"};
+        String[] cmd = { "cmd", "/c",  "cd c:\\DaJaVa && apktool d -f", FileName};
         Process process = null;
         try {
             process = new ProcessBuilder(cmd).start();
@@ -17,7 +17,7 @@ class Jar {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return"c:"+args+"\\AndroidManifest.xml"; //xml경로를 return
+        return"c:"+args+"\\AndroidManifest.xml"; //xml경로를 String으로 return
     }
 
 }
