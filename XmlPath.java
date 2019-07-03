@@ -17,7 +17,7 @@ class Jar {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return"c:"+args+"\\AndroidManifest.xml"; //xml경로를 String으로 return
+        return "c:\\DaJaVa\\"+args+"\\AndroidManifest.xml"; //xml경로를 String으로 return
     }
 
 }
