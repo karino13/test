@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+class Class{
+    public static int find(){
+        //Class파일에서 외부 저장소에서 쓰기 읽기 취약점
+        String filename = new String();
+        String word = "(?i).*getExternalStorage.*";
+        int num=0;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String s;
+
+            int line =1;
+
+            while ((s = reader.readLine()) != null) {
+                if (s.matches(word)){
+                    System.out.println(line + " : " + s);
+                    num++;
+                }
+                line++; }
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+        catch (IOException e) { e.printStackTrace(); }
+        if(num>0){
+            System.out.println("외부저장소 쓰기 읽기 취약점 발견" + filename);
+            return 1; }
+        else
+            return 0;
+    }
+}
+public abstract class Main{
+    public static void main(String[] args){
+        Class.find();
+    }
+
+}
