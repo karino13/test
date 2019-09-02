@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 class Class{
-    public static int find(){
+    public static int findExternalStorage(){
         //Class파일에서 외부 저장소에서 쓰기 읽기 취약점
         String filename = new String();
         String word = "(?i).*getExternalStorage.*";
